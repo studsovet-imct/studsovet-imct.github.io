@@ -19,4 +19,3 @@ jobs:
           git add _posts/posts-repo
           git commit -m "Auto-update posts submodule"
           git push
-``` :contentReference[oaicite:8]{index=8}  

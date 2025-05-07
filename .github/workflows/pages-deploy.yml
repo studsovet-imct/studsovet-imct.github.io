@@ -32,12 +32,10 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
-          ``` :contentReference[oaicite:9]{index=9} 
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
       - name: Update submodules to latest
-        run: git submodule update --init --recursive --remote
-      ``` :contentReference[oaicite:10]{index=10}  
+        run: git submodule update --init --recursive --remote 
 
       - name: Setup Pages
         id: pages
