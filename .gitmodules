@@ -2,6 +2,6 @@
 	path = assets/lib
 	url = https://github.com/cotes2020/chirpy-static-assets.git
 [submodule "_posts"]
-	path = _posts/WikiPublication
+	path = _posts/
 	url = https://github.com/studsovet-imct/WikiPublication.git
 	branch = main
