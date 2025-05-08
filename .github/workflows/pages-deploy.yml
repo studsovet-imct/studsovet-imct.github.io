@@ -34,8 +34,6 @@ jobs:
           submodules: recursive
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
-      - name: Update submodules to latest
-        run: git submodule update --init --recursive --remote 
 
       - name: Setup Pages
         id: pages
