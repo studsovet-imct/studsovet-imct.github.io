@@ -1,8 +1,6 @@
 name: Sync Submodule
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # каждый час
   workflow_dispatch:
 
 jobs:
@@ -15,7 +13,4 @@ jobs:
           submodules: recursive
       - name: Update submodules
         run: |
-          git submodule update --init --recursive --remote
-          git add _posts/posts-repo
-          git commit -m "Auto-update posts submodule"
-          git push
+          git submodule update
