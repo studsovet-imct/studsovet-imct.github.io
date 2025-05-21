@@ -47,9 +47,16 @@ jobs:
         with:
           ruby-version: 3.3
           bundler-cache: true
-          
-      - name: Upload subrepository
-        run: git submodule update --init
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - name: Update submodules
+        run: |
+          git submodule init
+          git submodule update --remote --rebase
+          ls -la ./_posts
         
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" --verbose
