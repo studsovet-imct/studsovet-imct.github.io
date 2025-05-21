@@ -48,18 +48,19 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
-      - name: Sync submodules
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          submodules: recursive
+      - name: Update submodules
+        run: |
+          git submodule init
+          git submodule update --remote --rebase
 
       - name: Checking new posts in directory
         run:
           ls -la ./_posts
         
       - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" --verbose
+        run: |
+          bundle install
+          bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}" --verbose
         env:
           JEKYLL_ENV: "production"
 
